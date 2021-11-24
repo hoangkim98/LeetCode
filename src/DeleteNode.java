@@ -14,7 +14,6 @@ public class DeleteNode
 	{
 		node.val = node.next.val;
 		node.next = node.next.next;
-		node.next = null;
 	}
 
 
