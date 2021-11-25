@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class DeleteNode
 {
 	public class ListNode
