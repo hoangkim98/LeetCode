@@ -27,7 +27,7 @@ public class Ques1
 			res.append('<');
 		}
 		res.append(angles);
-		for(int i = 0;i<stack.capacity();i++){
+		for(int i = 0;i<stack.size();i++){
 			res.append('>');
 		}
 		return res.toString();
