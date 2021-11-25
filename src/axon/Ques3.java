@@ -15,8 +15,13 @@ public class Ques3
 			decimal[i] = (value - (int) value);
 		}
 
+		// Chênh lệch giữa tổng và tổng phần nguyên
+//		VD: 14 - (5+6+5) =1
 		int n = (int) (Math.round(sum) - sumL);
 
+		// Tìm indexArr chứa index của n phần thập phân lớn nhất
+		// [5.5, 3.3, 5] -> phần thập phân [0.5, 0.3, 0] -> indexArr [0] do 0.5 lớn nhất
+		// Bài toán: find k-th largest elements
 		int indexArr[] = new int[n];
 		double max = 0;
 		int index;
@@ -36,6 +41,8 @@ public class Ques3
 			decimal[index] = Integer.MIN_VALUE;
 		}
 
+		// Lấy ceil với n giá trị có phần thập phân lớn nhất dựa theo indexArr
+		// Lấy floor với những giá trị còn lại
 		long[] res = new long[prices.length];
 		for (int i = 0; i < prices.length; i++)
 		{
@@ -49,6 +56,7 @@ public class Ques3
 			}
 
 		}
+		// Ez
 		return res;
 	}
 
