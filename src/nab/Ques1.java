@@ -1,5 +1,6 @@
 package nab;
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -11,31 +12,25 @@ public class Ques1
 		if(K>= message.length() || message.length() == 0){
 			return message;
 		}
-		String[] strArr = message.split(" ");
-		Map<String, Integer> mapStr = new LinkedHashMap<>();
-		for(int i = 0;i<strArr.length;i++){
-			mapStr.put(strArr[i], strArr[i].length());
-		}
+		int prevSpace = 0;
 
-		int count = 0;
-		StringBuilder sb = new StringBuilder();
-
-		for(Map.Entry<String, Integer> entry: mapStr.entrySet()){
-			if(count + entry.getValue() <= K){
-				count += entry.getValue() + 1;
-				sb.append(entry.getKey());
-				sb.append(" ");
+		char[] strArr = message.toCharArray();
+		for(int i = 0; i<strArr.length;i++){
+			if(strArr[i] == ' '){
+				prevSpace = i;
+			}
+			if(i > K - 1){
+				break;
 			}
 		}
-
-		return sb.toString().replaceAll("\\s+$", "");
+		return new String(Arrays.copyOfRange(strArr, 0, prevSpace));
 	}
 
 	public static void main(String[] args)
 	{
 		String test = "abc xyz";
-		String res = solution(test, 3);
-		System.out.println(res);
+		String res = solution(test, 7);
+		System.out.print(res);
 
 	}
 }
