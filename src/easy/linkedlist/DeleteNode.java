@@ -1,4 +1,4 @@
-package linkedlist;
+package easy.linkedlist;
 
 public class DeleteNode
 {

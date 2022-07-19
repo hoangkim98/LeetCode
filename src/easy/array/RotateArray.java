@@ -1,4 +1,4 @@
-package array;
+package easy.array;
 
 public class RotateArray
 {

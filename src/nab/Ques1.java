@@ -21,6 +21,9 @@ public class Ques1
 		StringBuilder sb = new StringBuilder();
 
 		for(Map.Entry<String, Integer> entry: mapStr.entrySet()){
+			if(entry.getValue() > K){
+				break;
+			}
 			if(count + entry.getValue() <= K){
 				count += entry.getValue() + 1;
 				sb.append(entry.getKey());
@@ -33,8 +36,8 @@ public class Ques1
 
 	public static void main(String[] args)
 	{
-		String test = "abc xyz";
-		String res = solution(test, 3);
+		String test = "abc xy";
+		String res = solution(test, 2);
 		System.out.println(res);
 
 	}
