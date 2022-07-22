@@ -5,6 +5,7 @@ public class RemovesDuplicate {
 
     public static int removeDuplicates(int[] nums) {
         int dupIdx = 0, preVal = 0;
+        // Get first duplicate position -> dupIdx
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] == nums[i + 1]) {
                 dupIdx = i + 1;
@@ -13,29 +14,23 @@ public class RemovesDuplicate {
             }
 
         }
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > preVal) {
-                preVal = nums[i];
-                swap(nums, i, dupIdx);
-                dupIdx++;
+        if (dupIdx != 0) {
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] > preVal) {
+                    preVal = nums[i];
+                    swap(nums, i, dupIdx);
+                    dupIdx++;
+                }
             }
         }
-        int res = 0;
-        for (; res < nums.length - 1; res++) {
-            if (nums[res] >= nums[res + 1]) {
-                break;
-            }
-        }
-        return res + 1;
+
+        return dupIdx != 0 ? dupIdx : nums.length;
     }
 
     private static void swap(int[] nums, int i, int j) {
-
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
-
-
     }
 
     public static void main(String[] args) {
