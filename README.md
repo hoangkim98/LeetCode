@@ -1,3 +1,3 @@
 # LeetCode
 
-3 year of experience Software Engineer try to get higher salary job !
+3 years of experience Software Engineer tries to get higher salary job !
