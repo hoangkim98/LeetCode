@@ -5,9 +5,10 @@ import java.util.*;
 public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
+        Map<Integer, Boolean> checkDup = new HashMap<>();
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
-            if (i > 0) {
+            if (nums[i] > 0 || checkDup.containsKey(nums[i])) {
                 break;
             }
             Map<Integer, Boolean> twoSumMap = new HashMap<>();
@@ -17,6 +18,7 @@ public class ThreeSum {
                 }
                 if (twoSumMap.containsKey(nums[j])) {
                     res.add(List.of(nums[i], nums[j], -nums[i] - nums[j]));
+                    checkDup.put(nums[i], true);
                 } else {
                     twoSumMap.put(-nums[i] - nums[j], true);
                 }
