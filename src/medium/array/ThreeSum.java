@@ -13,17 +13,16 @@ public class ThreeSum {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
-            // If store term -> "Term"
-            // For checking exist -> "Exist"
+           
             Map<Integer, String> twoSumMap = new HashMap<>();
             for (int j = i + 1; j < nums.length; j++) {
                 if (twoSumMap.containsKey(nums[j])) {
-                    if ("Term".equalsIgnoreCase(twoSumMap.get(nums[j]))) {
+                    if ("Missing number".equalsIgnoreCase(twoSumMap.get(nums[j]))) {
                         res.add(List.of(nums[i], nums[j], -nums[i] - nums[j]));
-                        twoSumMap.put(nums[j], "Exist");
+                        twoSumMap.put(nums[j], "Already used");
                     }
                 } else {
-                    twoSumMap.put(-nums[i] - nums[j], "Term");
+                    twoSumMap.put(-nums[i] - nums[j], "Missing number");
                 }
             }
         }
