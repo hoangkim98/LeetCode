@@ -54,7 +54,6 @@ public class ValidString {
                     } else {
                         return false;
                     }
-                    i++;
                 } else {
                     return false;
                 }
@@ -67,6 +66,5 @@ public class ValidString {
 
     public static void main(String[] args) {
         System.out.println(isValid("aaababccbcbc"));
-
     }
 }
