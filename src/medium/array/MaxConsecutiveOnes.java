@@ -21,24 +21,34 @@ Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 
 public class MaxConsecutiveOnes {
     public static int longestOnes(int[] nums, int k) {
-        int max = 0;
-        for (int i = 0; i < nums.length; i++) {
-            int num = nums[i];
-            if (num == 0) {
-                int count = 0;
-                for (int j = i; j <= i + k - 1; j++) {
-                    if (nums[j] == 0) {
-                        count++;
+        int start = 0, end = 0, max = 0, countZero = 0;
+        while (end < nums.length) {
+            if (nums[end] == 1) {
+                max++;
+            } else if (nums[end] == 0 && countZero < k) {
+                countZero++;
+                max++;
+            } else if (nums[end] == 0 && countZero >= k) {
+                int findZero = 0;
+                while (start < nums.length) {
+                    if (nums[start] == 0) {
+                        findZero++;
                     }
+                    if (findZero == 2) {
+                        end = start + max;
+                        break;
+                    }
+                    start++;
                 }
-                max = Math.max(max, count);
+
             }
+            end++;
         }
         return max;
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0};
-        System.out.println(longestOnes(nums, 2));
+        int[] nums = {0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1};
+        System.out.println(longestOnes(nums, 3));
     }
 }

@@ -2,15 +2,6 @@ package easy.linkedlist;
 
 public class DeleteNode
 {
-	public class ListNode
-	{
-		int val;
-		ListNode next;
-		ListNode(int x)
-		{
-			val = x;
-		}
-	}
 
 	public void deleteNode(ListNode node)
 	{
