@@ -17,4 +17,5 @@ public class BuySellStock {
         int[] prices = {7, 10, 4, 9, 1};
         System.out.println(maxProfit(prices));
     }
+
 }
