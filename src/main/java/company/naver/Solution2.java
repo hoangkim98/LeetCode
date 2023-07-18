@@ -5,7 +5,7 @@ import java.io.*;
 import static java.util.stream.Collectors.joining;
 
 
-class Result {
+class Result2 {
 
     /*
      * Complete the 'maxXor' function below.
@@ -50,8 +50,8 @@ public class Solution2 {
 //
 //        bufferedReader.close();
 //        bufferedWriter.close();
-        System.out.println(Result.maxXor(1,3 ,3));
-        System.out.println(Result.maxXor(2, 4, 8));
-        System.out.println(Result.maxXor(11, 61, 32));
+        System.out.println(Result2.maxXor(1,3 ,3));
+        System.out.println(Result2.maxXor(2, 4, 8));
+        System.out.println(Result2.maxXor(11, 61, 32));
     }
 }
