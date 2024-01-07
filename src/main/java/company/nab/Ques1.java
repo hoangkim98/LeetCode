@@ -5,15 +5,16 @@ import java.util.Map;
 
 
 public class Ques1 {
+
     public static String solution(String message, int K) {
         // write your code in Java SE 8
-        if (K >= message.length() || message.length() == 0) {
+        if (K >= message.length() || message.isEmpty()) {
             return message;
         }
         String[] strArr = message.split(" ");
         Map<String, Integer> mapStr = new LinkedHashMap<>();
-        for (int i = 0; i < strArr.length; i++) {
-            mapStr.put(strArr[i], strArr[i].length());
+        for (String s : strArr) {
+            mapStr.put(s, s.length());
         }
 
         int count = 0;

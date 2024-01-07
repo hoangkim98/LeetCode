@@ -1,6 +1,7 @@
 package company.axon;
 
 public class Ques3 {
+
     public static long[] prices(double[] prices) {
         double sum = 0;
         int sumL = 0;
@@ -19,8 +20,8 @@ public class Ques3 {
         // Tìm indexArr chứa index của n phần thập phân lớn nhất
         // [5.5, 3.3, 5] -> phần thập phân [0.5, 0.3, 0] -> indexArr [0] do 0.5 lớn nhất
         // Bài toán: find k-th largest elements
-        int indexArr[] = new int[n];
-        double max = 0;
+        int[] indexArr = new int[n];
+        double max;
         int index;
         for (int j = 0; j < n; j++) {
             max = decimal[0];
@@ -40,9 +41,10 @@ public class Ques3 {
         long[] res = new long[prices.length];
         for (int i = 0; i < prices.length; i++) {
             res[i] = (long) prices[i];
-            for (int j = 0; j < indexArr.length; j++) {
-                if (i == indexArr[j]) {
+            for (int k : indexArr) {
+                if (i == k) {
                     res[i] = (long) Math.ceil(prices[i]);
+                    break;
                 }
             }
 
@@ -55,8 +57,8 @@ public class Ques3 {
         double[] prices = {5.3, 3.3, 5};
         long[] res = prices(prices);
 
-        for (int i = 0; i < res.length; i++) {
-            System.out.println(res[i]);
+        for (long re : res) {
+            System.out.println(re);
         }
     }
 }
